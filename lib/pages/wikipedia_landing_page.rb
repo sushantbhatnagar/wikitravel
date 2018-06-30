@@ -8,4 +8,9 @@ class WikipediaLandingPage < WikiRootPage
 
   div(:wiki_title, class: 'central-textlogo__image sprite svg-Wikipedia_wordmark')
   button(:wiki_search, class: 'pure-button pure-button-primary-progressive')
+
+  links(:language_options, xpath: '//*[contains(@class,"central-featured-lang")]/a')
+  li(:iOS_wiki_app_link, class: 'app-badge-ios')
+  li(:android_wiki_app_link, class: 'app-badge-android')
+
 end

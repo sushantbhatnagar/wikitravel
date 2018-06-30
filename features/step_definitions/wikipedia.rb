@@ -44,3 +44,28 @@ end
 Then(/^I should see an error message with below content$/) do |text|
   expect(on(WikipediaSearchResultsPage).search_results_error_message_element.text).to eql text
 end
+
+Then(/^I should see below language options to choose from on the landing page$/) do |table|
+  data = table.raw
+  available_languages = on(WikipediaLandingPage).language_options_elements.map { |language| language.text.split("\n")[0] }
+  data.each { |task| expect(available_languages).to include (task[0]) }
+end
+
+When(/^I click the ([^"]*) link$/) do |link|
+  if link.include?('iOS')
+    on(WikipediaLandingPage) do |landing_page|
+      landing_page.wait_until(30) { landing_page.iOS_wiki_app_link_element.visible? }
+      landing_page.iOS_wiki_app_link_element.click
+    end
+  else
+    on(WikipediaLandingPage) do |landing_page|
+      landing_page.wait_until(30) { landing_page.android_wiki_app_link_element.visible? }
+      landing_page.android_wiki_app_link_element.click
+    end
+  end
+end
+
+Then(/^I should be navigated to the ([^"]*) website successfully$/) do |website_name|
+  current_window_url = @browser.windows.last.use.url
+  expect(current_window_url).to include website_name
+end
