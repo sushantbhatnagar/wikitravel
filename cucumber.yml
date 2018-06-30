@@ -1,0 +1,3 @@
+default: --no-source --color --format pretty
+html_report: --format progress --format html --out=features.report.html
+wiki_profile: FIG_NEWTON_FILE=default.yml --profile default #--profile html_report

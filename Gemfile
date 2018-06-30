@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'cucumber'
+gem 'rspec'
+gem 'rake'
+gem 'page-object', '~> 2.0'
+gem 'fig_newton'
+gem 'data_magic'
+gem 'require_all'
+gem 'pry'
