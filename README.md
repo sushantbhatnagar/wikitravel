@@ -160,7 +160,7 @@ rspec spec/wikipedia_search_results_page_spec.rb
 
 # Reports - Default HTML Format
 
-**wiki_features_report.html** and **travelex_features_report.html** files contain test execution details and status of the scenarios resulting in pass or fail, using Cucumber default reporting format.
+Reports should be generated with file names as **wiki_features_report.html** and **travelex_features_report.html** for wikipedia and travelex scenarios respectively, every time you run a scenario/feature.
 
 To view the report, right-click on any of the html file, hover on 'Open in Browser' option and choose the browser of your choice.
  
