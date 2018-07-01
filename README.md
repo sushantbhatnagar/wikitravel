@@ -11,7 +11,9 @@ Cucumber execution starts from **support/env.rb** file loading the required gems
 
 Cucumber provides a number of hooks which allow us to run blocks at various points in the Cucumber test cycle. We can put them in any other file under the support directory. In this framework, we have placed in a file called **support/hooks.rb**.
 
-Feature files can be put under **features/** directory with .feature extension. In features, we write scenarios in Gherkin format (Give, When and Then) to ensure the tests are easily readable and do not contains technical jargons. 
+Feature files can be put under **features/** directory with .feature extension. In features, we write scenarios in Gherkin format (Give, When and Then) to ensure the tests are easily readable and do not contains technical jargons.
+ 
+ Wikipedia scenarios are defined under **features/wikipedia** directory and Travelex scenarios are defined under **features/travelex** directory.
 
 Actual code implementation takes place in **step_definitions/** directory having steps to navigate through the scenarios defined in the feature files.
 
@@ -66,13 +68,15 @@ gem install fig_newton
 
 ```gem fig_newton``` makes it easier to manage different test environments. It is also common to have to change some of the values we use in our tests as we move from environment to environment. The **config/environments** directory is the default directory used by fig_newton.
 
+```gem rspec``` is used for Behavior Driven Development for Ruby. spec is a meta-gem, which depends on the rspec-core, rspec-expectations and rspec-mocks gems. Each of these can be installed separately and loaded in isolation using require.
+
 # Technology Stack
  
  - **Tools**            :   Cucumber
  - **Language**         :   Ruby
  - **Framework**        :   Behavior Driven Development(BDD)
  - **Web-driver**       :   WATIR (under the hood - SELENIUM)
- - **Patterns**         :   Page-object, Page-Factory, Template, Assertion, Process
+ - **Design Patterns**         :   Page-object, Page-Factory, Template, Assertion, Process
  - **Version Control**  :   GIT
  - **Reporting**        :   Cucumber Default Reporting (html)    
 
@@ -91,6 +95,14 @@ Once you have installed the gems stated above in Framework Installation Instruct
 ```
 bundle install
 ```
+
+Do a rspec init at the root of your project directory:
+
+```
+rspec --init
+```
+
+You are ready to run tests now. Use below commands:
 
 To run **Wikipedia** front end tests:
 
@@ -130,7 +142,7 @@ cucumber -p travelex_profile -t @travelex_slider
  - We have two profiles - **travel_profile** and **wiki_profile**
  - Check **cucumber.yml** file for more details.
 
-2. Tests are implemented and verified with Chrome Browser version 67.0.3396.99 (Official Build) (64-bit) at this moment and Chrome driver 2.35. 
+4. Tests are implemented and verified with Chrome Browser version 67.0.3396.99 (Official Build) (64-bit) at this moment and Chrome driver 2.35. 
  
  - Will be updated for other browsers(Firefox, IE) in future updates. 
 
@@ -144,6 +156,8 @@ To view the report, right-click on any of the html file, hover on 'Open in Brows
 **wiki_html_report** and **travelex_html_report** profiles are created in cucumber.yml file to have the reports generated with each execution.
 
 To generate the html report, use below profile either in Command line or embed the profile with wiki_profile or travelex_profile
+
+ ```wiki_html_report```  or  ```travelex_html_report```
 
 # Future Enhancements
 
