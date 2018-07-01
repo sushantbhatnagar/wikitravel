@@ -1,10 +1,6 @@
 @wiki_exploratory_tests
 Feature: Wikipedia Exploratory Tests
 
-#  As a user
-#  I want to navigate to Wikipedia website
-#  So I can search results on Wikipedia
-
   @language_options @functional_test
   Scenario: Verify I should see multiple language options to choose from on Wikipedia Landing Page
     Given I am on the Wikipedia Landing page
