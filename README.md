@@ -1,7 +1,7 @@
 # WikiTravel Project
 This project is created to verify basics search results flow of Wikipedia website and explore some Currency Exchange areas of Travelex(UK) website.
  
-# Framework - Folder Structure
+# Framework Design and Implementation
 
 Cucumber is a tool that facilitates Behavior Driven Development(BDD) framework. It acts as a living documentation wherein the scenarios can be written in Gherkin language, a plain text language which keeps Stakeholders, Developers and Testers on the same page in terms of the feature to be developed. 
 
@@ -45,7 +45,7 @@ The step definition is defined under _features/step_definitions/spec_definition.
 
 All unit tests are created in spec.rb files (**wikipedia_landing_page_spec.rb** and **wikipedia_search_results_page_spec.rb**) files which require the spec_helper.rb file having the configurations.
  
-# Framework - Installation Instructions
+# Framework - Set Up Instructions
 
 **_Assuming_** Ruby version > 2.3 is installed in your system along with any IDE say, Ruby Mine that supports Ruby.
 
@@ -158,7 +158,7 @@ rspec spec/wikipedia_search_results_page_spec.rb
   
 5. The second scenario ```rspec spec/wikipedia_search_results_page_spec.rb``` was tested when the WIKI search results server was down. This test case might fail at the time you are trying to run it. I will shortly embed the execution result screen for this scenario.
 
-# Reports - HTML Format
+# Reports - Default HTML Format
 
 **wiki_features_report.html** and **travelex_features_report.html** files contain test execution details and status of the scenarios resulting in pass or fail, using Cucumber default reporting format.
 
