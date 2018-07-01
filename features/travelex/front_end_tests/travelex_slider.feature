@@ -1,4 +1,4 @@
-@travelex_slider
+@travelex_slider @travelex_tests
 Feature: Travelex Slider
 
   As a user

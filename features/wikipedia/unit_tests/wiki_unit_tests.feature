@@ -1,8 +1,9 @@
+@wiki_unit_tests
 Feature: Wikipedia Search Results - Unit Tests
 
   As a user
   I want to navigate to Wikipedia website
-  So I can search results on Wikipedia
+  So I can verify the title and see error message when Search Engine is down
 
   @wikipedia_title @unit_test @rspec_test
   Scenario: Verify the title of Wikipedia landing page is displayed as 'WIKIPEDIA'

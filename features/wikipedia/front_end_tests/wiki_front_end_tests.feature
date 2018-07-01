@@ -1,4 +1,4 @@
-@wiki_search_results
+@wiki_search_results @wiki_tests
 Feature: Wikipedia Search Results
 
   As a user

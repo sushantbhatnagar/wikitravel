@@ -10,7 +10,7 @@ require_all 'lib'
 RSpec.configure do |config|
   config.include PageObject::PageFactory
 
-  #TODO: Isolate the browser with the unit tests
+  #TODO: Isolate the browser from the unit tests
   config.before do
     @browser = Watir::Browser.new :chrome
   end

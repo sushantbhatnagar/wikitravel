@@ -1,12 +1,3 @@
-# WIKITRAVEL
-
-# TODO - 
-    - Add pagination as exploratory
-    - Think about more scenarios
-    - Report
-    - Quandoo learnings
-    
-
 # WikiTravel Project
 This project is created to verify basics search results flow of Wikipedia website and explore some Currency Exchange areas of Travelex(UK) website.
  
@@ -34,6 +25,24 @@ Different environments like regression, pre-production or tests related to Smoke
 
 The **Gemfile.lock** file is where Bundler records the exact versions that were installed.
 
+# RSpec:: Unit Test Framework
+
+Since Cucumber with BDD framework involves testing of an End-to-End business logic in an application(SUT), I wanted to test few of the scenarios using RSpec rather than using Cucumber to drive those tests, for this project.
+
+Unit tests are defined under the directory: **/features/wikipedia/unit_tests**.
+
+Tests are still written using Gherkin but that is purely for just this project to demonstrate and are not required if we are using a RSpec framework to drive the tests.
+
+I have included a keyword ```(ph)``` for unit tests at the end of the Gherkin for each scenario. 
+
+The step definition is defined under _features/step_definitions/spec_definition.rb_ file.
+
+**spec** directory in the folder structure contains all the spec tests for the wikipedia application as per wikipedia pages i.e. the landing page and search results page. 
+
+**spec_helper.rb** file contains all the configurations that are required to run the rspec tests.
+
+All unit tests are created in spec.rb files (**wikipedia_landing_page_spec.rb** and **wikipedia_search_results_page_spec.rb**) files which require the spec_helper.rb file having the configurations.
+ 
 # Framework - Installation Instructions
 
 **_Assuming_** Ruby version > 2.3 is installed in your system along with any IDE say, Ruby Mine that supports Ruby.
@@ -42,7 +51,10 @@ To run this framework and its feature scenarios, you will need to have few gems 
 
 ```
 gem install cucumber
+gem install rspec
+gem install rake
 gem install watir
+gem install require_all
 gem install page-object
 gem install data_magic
 gem install fig_newton
@@ -74,6 +86,12 @@ cd /path/to/your/local_code_directory
 
 In our case, the root directory is **wikitravel**.
 
+Once you have installed the gems stated above in Framework Installation Instructions section, run bundle install
+
+```
+bundle install
+```
+
 To run **Wikipedia** front end tests:
 
 ```
@@ -97,27 +115,37 @@ cucumber -p travelex_profile -t @travelex_slider
   - To run a specific scenario, use below command:
     
     ```cucumber -p <profile_name> -t @scenario_tag```
+
+2. To run all wikipedia scenarios and travelex scenarios, specific tags are created at a feature file level.
+  - To run all wikipedia scenarios, use below command:
+    
+    ```cucumber -p wiki_profile -t @wiki_tests```
+  
+  - To run all travelex scenarios, use below command:
+      
+      ```cucumber -p travelex_profile -t @travelex_tests```
         
-2. '-p' stands for profiles and is used to define the particular environment in which tests are executed.
+3. '-p' stands for profiles and is used to define the particular environment in which tests are executed.
 
  - We have two profiles - **travel_profile** and **wiki_profile**
  - Check **cucumber.yml** file for more details.
 
-3. Tests are implemented and verified with Chrome Browser version 67.0.3396.99 (Official Build) (64-bit) at this moment and Chrome driver 2.35. 
+2. Tests are implemented and verified with Chrome Browser version 67.0.3396.99 (Official Build) (64-bit) at this moment and Chrome driver 2.35. 
  
  - Will be updated for other browsers(Firefox, IE) in future updates. 
 
 
 # Reports - HTML Format
 
-**features.report.html** file contains test execution details and status of the scenarios resulting in pass or fail, using Cucumber default reporting format.
+**wiki_features_report.html** and **travelex_features_report.html** files contain test execution details and status of the scenarios resulting in pass or fail, using Cucumber default reporting format.
 
-To view the report, right-click on **features.report.html** file, hover on 'Open in Browser' option and choose the browser of your choice.
+To view the report, right-click on any of the html file, hover on 'Open in Browser' option and choose the browser of your choice.
  
-**html_report** profile is created in cucumber.yml file to have the reports generated with each execution.
+**wiki_html_report** and **travelex_html_report** profiles are created in cucumber.yml file to have the reports generated with each execution.
 
-Just use ```-p html_report``` with your cucumber command.  
- 
-  
+To generate the html report, use below profile either in Command line or embed the profile with wiki_profile or travelex_profile
 
-- [Read Here!](https://github.com/grosser/parallel_tests) for more details on parallel_tests gem.
+# Future Enhancements
+
+- Run tests with Firefox and IE web browsers.
+- Remove the browser invoke functionality for unit tests.

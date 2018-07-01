@@ -23,7 +23,7 @@ Then(/^I should see (\d+) results displayed on the Search Results page$/) do |nu
   last_result_on_page = results.split(' ').last.to_i
   expect(last_result_on_page - first_result_on_page).to eql number_of_results
 
-  # This is another way we can test if the search results count is 20 or not !!
+  # This is another way we can test if the search results count is 20 or not!
   expect(on(WikipediaSearchResultsPage).searched_all_articles_elements.count).to eql number_of_results
 end
 

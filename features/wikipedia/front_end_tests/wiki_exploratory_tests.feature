@@ -1,4 +1,4 @@
-@wiki_exploratory_tests
+@wiki_exploratory_tests @wiki_tests
 Feature: Wikipedia Exploratory Tests
 
   @language_options @functional_test
