@@ -122,6 +122,16 @@ To run **Travelex** front end tests:
 cucumber -p travelex_profile -t @travelex_slider
 ```
 
+To run Unit test cases created using rspec, run the following commands:
+
+```
+rspec spec/wikipedia_landing_page_spec.rb
+```
+
+```
+rspec spec/wikipedia_search_results_page_spec.rb
+```
+
 **Notes:** 
 1. Please note a '@scenario_tag' is defined on each scenario in the feature file.
   - To run a specific scenario, use below command:
@@ -144,8 +154,9 @@ cucumber -p travelex_profile -t @travelex_slider
 
 4. Tests are implemented and verified with Chrome Browser version 67.0.3396.99 (Official Build) (64-bit) at this moment and Chrome driver 2.35. 
  
- - Will be updated for other browsers(Firefox, IE) in future updates. 
-
+ - Will be updated for other browsers(Firefox, IE) in future updates.
+  
+5. The second scenario ```rspec spec/wikipedia_search_results_page_spec.rb``` was tested when the WIKI search results server was down. This test case might fail at the time you are trying to run it. I will shortly embed the execution result screen for this scenario.
 
 # Reports - HTML Format
 
