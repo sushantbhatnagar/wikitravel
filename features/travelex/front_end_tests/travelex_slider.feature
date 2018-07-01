@@ -1,3 +1,4 @@
+@travelex_slider
 Feature: Travelex Slider
 
   As a user
