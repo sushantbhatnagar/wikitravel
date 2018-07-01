@@ -12,5 +12,4 @@ class WikipediaLandingPage < WikiRootPage
   links(:language_options, xpath: '//*[contains(@class,"central-featured-lang")]/a')
   li(:iOS_wiki_app_link, class: 'app-badge-ios')
   li(:android_wiki_app_link, class: 'app-badge-android')
-
 end
